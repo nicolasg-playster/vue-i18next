@@ -45,7 +45,7 @@ export function install(_Vue) {
 
       if (this.$i18n) {
         const namespace = options.name || `${Math.random()}`;
-        let namespacesToLoad = [namespace];
+        let namespacesToLoad = (options.noComponentNS) ? [] : [namespace];
 
         if (options.__i18n) {
           options.__i18n.forEach((resource) => {
